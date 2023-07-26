@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Offer Types</title>
+</head>
+<body>
+<h1>Offer Types</h1>
+<form th:action="@{/offer/save-all}" method="post">
+    <input type="hidden" name="id" th:value="${shop.id}" />
+    <label for="offerType">Select an offer type:</label>
+    <select name="offerType" id="offerType">
+        <option>select</option>
+        <option th:each="offerType : ${offerTypes}" th:value="${offerType}" th:text="${offerType}"></option>
+    </select>
+    <button type="submit">Submit</button>
+</form>
+</body>
+</html>
